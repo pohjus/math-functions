@@ -1,12 +1,24 @@
 // Import the function to be tested
-const { add } = require("../src/mathFunctions"); // Adjust the path as needed
+const { add, subtract, multiply, divide } = require("../src/mathFunctions"); // Adjust the path according to your project structure
 
-// Describe the test suite (a group of related tests)
-describe("Math Functions", () => {
-  test("Addition", () => {
-    const result = add(3, 5);
-    expect(result).toBe(8);
+describe("Arithmetic operations", () => {
+  test("adds two numbers", () => {
+    expect(add(1, 2)).toBe(3);
   });
 
-  // You can add more test cases here to cover different scenarios
+  test("subtracts two numbers", () => {
+    expect(subtract(5, 2)).toBe(3);
+  });
+
+  test("multiplies two numbers", () => {
+    expect(multiply(3, 4)).toBe(12);
+  });
+
+  test("divides two numbers", () => {
+    expect(divide(8, 2)).toBe(4);
+  });
+
+  test("division by zero throws error", () => {
+    expect(() => divide(5, 0)).toThrow("Cannot divide by zero");
+  });
 });
